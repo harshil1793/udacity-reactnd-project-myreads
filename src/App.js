@@ -38,17 +38,20 @@ class BooksApp extends React.Component {
         if(query){
             BooksAPI.search(query, this.MAX_RESULTS).then((books) => {
                 // if the SearchAPI result was proper, this would be unnecessary
-                books.forEach((book, index) => {
-                    let myBook = this.state.books.find((b) => b.id === book.id);
-                    if(myBook){
-                        book.shelf = myBook.shelf;
-                        books[index] = book;
-                    }
-                });
+                if(books.length){
+                    books.forEach((book, index) => {
+                        let myBook = this.state.books.find((b) => b.id === book.id);
+                        if(myBook){
+                            book.shelf = myBook.shelf;
+                            books[index] = book;
+                        }
+                    });
 
-                this.setState({
-                    searchBooks: books
-                });
+                    this.setState({
+                        searchBooks: books
+                    });
+                }
+
             });
             } else {
             this.setState({
