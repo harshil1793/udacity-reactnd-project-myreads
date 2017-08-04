@@ -41,10 +41,8 @@ class BooksApp extends React.Component {
                 if(books.length){
                     books.forEach((book, index) => {
                         let myBook = this.state.books.find((b) => b.id === book.id);
-                        if(myBook){
-                            book.shelf = myBook.shelf;
-                            books[index] = book;
-                        }
+                        book.shelf = myBook ? myBook.shelf : 'none';
+                        books[index] = book;
                     });
 
                     this.setState({
