@@ -1,198 +1,316 @@
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 *, *:before, *:after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 html, body, .root {
-  height: 100%;
+    height: 100%;
 }
+
 body {
-  line-height: 1.5;
+    line-height: 1.5;
 }
+
 body, .app {
-  background: white;
+    background: white;
 }
 
 /* main page */
 
 .list-books-title {
-  padding: 10px 0;
-  background: #2e7c31;
-  text-align: center;
+    padding: 10px 0;
+    background: #2e7c31;
+    text-align: center;
 }
+
 .list-books-title h1 {
-  font-weight: 400;
-  margin: 0;
-  color: white;
+    font-weight: 400;
+    margin: 0;
+    color: white;
 }
 
 .list-books-content {
-  padding: 0 0 80px;
-  flex: 1;
+    padding: 0 0 80px;
+    flex: 1;
 }
 
 .bookshelf {
-  padding: 0 10px 20px;
+    padding: 0 10px 20px;
 }
 
 @media (min-width: 600px) {
-  .bookshelf {
-    padding: 0 20px 40px;
-  }
+    .bookshelf {
+        padding: 0 20px 40px;
+    }
 }
 
 .bookshelf-title {
-  border-bottom: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
 }
+
 .bookshelf-books {
-  text-align: center;
+    text-align: center;
 }
 
 .open-search {
-  position: fixed;
-  right: 25px;
-  bottom: 25px;
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
 }
+
 .open-search a {
-  display: block;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: #2e7d32;
-  background-image: url('./icons/add.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 28px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  font-size: 0;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #2e7d32;
+    background-image: url('./icons/add.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 28px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    font-size: 0;
 }
 
 /* search page */
 
 .search-books-bar {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 5;
-  display: flex;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 0 6px rgba(0,0,0,0.23);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: flex;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0 6px rgba(0, 0, 0, 0.23);
 }
+
 .search-books-input-wrapper {
-  flex: 1;
-  background: #e9e;
+    flex: 1;
+    background: #e9e;
 }
+
 .search-books-bar input {
-  width: 100%;
-  padding: 15px 10px;
-  font-size: 1.25em;
-  border: none;
-  outline: none;
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 1.25em;
+    border: none;
+    outline: none;
 }
 
 .close-search {
-  display: block;
-  top: 20px;
-  left: 15px;
-  width: 50px;
-  height: 53px;
-  background: white;
-  background-image: url('./icons/arrow-back.svg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 28px;
-  font-size: 0;
+    display: block;
+    top: 20px;
+    left: 15px;
+    width: 50px;
+    height: 53px;
+    background: white;
+    background-image: url('./icons/arrow-back.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 28px;
+    font-size: 0;
 }
 
 .search-books-results {
-  padding: 80px 10px 20px;
+    padding: 80px 10px 20px;
 }
 
 /* books grid */
 
 .books-grid {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
+
 .books-grid li {
-  padding: 10px 15px;
-  text-align: left;
+    padding: 10px 15px;
+    text-align: left;
 }
 
 .book {
-  width: 140px;
-  position: relative;
+    width: 140px;
+    position: relative;
 }
+
 .book-title,
 .book-authors {
-  font-size: 0.8em;
+    font-size: 0.8em;
 }
+
 .book-title {
-  margin-top: 10px;
+    margin-top: 10px;
 }
+
 .book-authors {
-  color: #999;
+    color: #999;
 }
 
 .book-top {
-  position: relative;
-  height: 200px;
-  display: flex;
-  align-items: flex-end;
+    position: relative;
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
 }
 
 .book-shelf-changer {
-  position: absolute;
-  right: 0;
-  bottom: -10px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #60ac5d;
-  background-image: url('./icons/arrow-drop-down.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 20px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #60ac5d;
+    background-image: url('./icons/arrow-drop-down.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .book-shelf-changer.animate {
-  background-image: url('./icons/add.svg');
-  -webkit-animation:spin 4s linear infinite;
-  -moz-animation:spin 4s linear infinite;
-  animation:spin 4s linear infinite;
+    background-image: url('./icons/add.svg');
+    -webkit-animation: spin 4s linear infinite;
+    -moz-animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite;
 }
 
 .book-shelf-changer select {
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  cursor: pointer;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
 }
 
 /* book cover */
 
 .book-cover {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  background: #eee;
-  width: 128px;
-  height: 165px;
-  background-size: cover;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    background: #eee;
+    width: 128px;
+    height: 165px;
+    background-size: cover;
 }
+
 .book-cover-title {
-  padding: 20px 10px 0;
-  text-align: center;
-  font-size: 0.8em;
+    padding: 20px 10px 0;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+/* Change Indicator */
+.cssload-spin-box {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    box-shadow: 8px 8px rgb(255, 255, 255), -8px 8px rgb(223, 223, 223), -8px -8px rgb(255, 255, 255), 8px -8px rgb(223, 223, 223);
+    -o-box-shadow: 8px 8px rgb(255, 255, 255), -8px 8px rgb(223, 223, 223), -8px -8px rgb(255, 255, 255), 8px -8px rgb(223, 223, 223);
+    -ms-box-shadow: 8px 8px rgb(255, 255, 255), -8px 8px rgb(223, 223, 223), -8px -8px rgb(255, 255, 255), 8px -8px rgb(223, 223, 223);
+    -webkit-box-shadow: 8px 8px rgb(255, 255, 255), -8px 8px rgb(223, 223, 223), -8px -8px rgb(255, 255, 255), 8px -8px rgb(223, 223, 223);
+    -moz-box-shadow: 8px 8px rgb(255, 255, 255), -8px 8px rgb(223, 223, 223), -8px -8px rgb(255, 255, 255), 8px -8px rgb(223, 223, 223);
+    animation: cssload-spin ease infinite 4.6s;
+    -o-animation: cssload-spin ease infinite 4.6s;
+    -ms-animation: cssload-spin ease infinite 4.6s;
+    -webkit-animation: cssload-spin ease infinite 4.6s;
+    -moz-animation: cssload-spin ease infinite 4.6s;
+    background-color: #60AC5D;
+}
+
+@keyframes cssload-spin {
+    0%,
+    100% {
+        box-shadow: 8px 8px rgb(255, 255, 255), -8px 8px rgb(223, 223, 223), -8px -8px rgb(255, 255, 255), 8px -8px rgb(223, 223, 223);
+    }
+    25% {
+        box-shadow: -8px 8px rgb(223, 223, 223), -8px -8px rgb(255, 255, 255), 8px -8px rgb(223, 223, 223), 8px 8px rgb(255, 255, 255);
+    }
+    50% {
+        box-shadow: -8px -8px rgb(255, 255, 255), 8px -8px rgb(223, 223, 223), 8px 8px rgb(255, 255, 255), -8px 8px rgb(223, 223, 223);
+    }
+    75% {
+        box-shadow: 8px -8px #ffffff, 8px 8px #dfdfdf, -8px 8px #ffffff, -8px -8px #dfdfdf;
+    }
+}
+
+@-o-keyframes cssload-spin {
+    0%,
+    100% {
+        box-shadow: 8px 8px rgb(255, 255, 255), -8px 8px rgb(223, 223, 223), -8px -8px rgb(255, 255, 255), 8px -8px rgb(223, 223, 223);
+    }
+    25% {
+        box-shadow: -8px 8px rgb(223, 223, 223), -8px -8px rgb(255, 255, 255), 8px -8px rgb(223, 223, 223), 8px 8px rgb(255, 255, 255);
+    }
+    50% {
+        box-shadow: -8px -8px rgb(255, 255, 255), 8px -8px rgb(223, 223, 223), 8px 8px rgb(255, 255, 255), -8px 8px rgb(223, 223, 223);
+    }
+    75% {
+        box-shadow: 8px -8px #ffffff, 8px 8px #dfdfdf, -8px 8px #ffffff, -8px -8px #dfdfdf;
+    }
+}
+
+@-ms-keyframes cssload-spin {
+    0%,
+    100% {
+        box-shadow: 8px 8px rgb(255, 255, 255), -8px 8px rgb(223, 223, 223), -8px -8px rgb(255, 255, 255), 8px -8px rgb(223, 223, 223);
+    }
+    25% {
+        box-shadow: -8px 8px rgb(223, 223, 223), -8px -8px rgb(255, 255, 255), 8px -8px rgb(223, 223, 223), 8px 8px rgb(255, 255, 255);
+    }
+    50% {
+        box-shadow: -8px -8px rgb(255, 255, 255), 8px -8px rgb(223, 223, 223), 8px 8px rgb(255, 255, 255), -8px 8px rgb(223, 223, 223);
+    }
+    75% {
+        box-shadow: 8px -8px #ffffff, 8px 8px #dfdfdf, -8px 8px #ffffff, -8px -8px #dfdfdf;
+    }
+}
+
+@-webkit-keyframes cssload-spin {
+    0%,
+    100% {
+        box-shadow: 8px 8px rgb(255, 255, 255), -8px 8px rgb(223, 223, 223), -8px -8px rgb(255, 255, 255), 8px -8px rgb(223, 223, 223);
+    }
+    25% {
+        box-shadow: -8px 8px rgb(223, 223, 223), -8px -8px rgb(255, 255, 255), 8px -8px rgb(223, 223, 223), 8px 8px rgb(255, 255, 255);
+    }
+    50% {
+        box-shadow: -8px -8px rgb(255, 255, 255), 8px -8px rgb(223, 223, 223), 8px 8px rgb(255, 255, 255), -8px 8px rgb(223, 223, 223);
+    }
+    75% {
+        box-shadow: 8px -8px #ffffff, 8px 8px #dfdfdf, -8px 8px #ffffff, -8px -8px #dfdfdf;
+    }
+}
+
+@-moz-keyframes cssload-spin {
+    0%,
+    100% {
+        box-shadow: 8px 8px rgb(255, 255, 255), -8px 8px rgb(223, 223, 223), -8px -8px rgb(255, 255, 255), 8px -8px rgb(223, 223, 223);
+    }
+    25% {
+        box-shadow: -8px 8px rgb(223, 223, 223), -8px -8px rgb(255, 255, 255), 8px -8px rgb(223, 223, 223), 8px 8px rgb(255, 255, 255);
+    }
+    50% {
+        box-shadow: -8px -8px rgb(255, 255, 255), 8px -8px rgb(223, 223, 223), 8px 8px rgb(255, 255, 255), -8px 8px rgb(223, 223, 223);
+    }
+    75% {
+        box-shadow: 8px -8px #ffffff, 8px 8px #dfdfdf, -8px 8px #ffffff, -8px -8px #dfdfdf;
+    }
 }

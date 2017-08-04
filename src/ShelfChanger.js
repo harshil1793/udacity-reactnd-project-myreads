@@ -8,18 +8,31 @@ class ShelfChanger extends Component{
         changeShelf: PropTypes.func.isRequired
     };
 
+    state = {
+        currentShelf: this.props.book.shelf,
+        updating: false
+    };
+
     changeShelf = (event) => {
         this.props.changeShelf(this.props.book, event.target.value);
         this.setState({
-            currentShelf: event.target.value
+            currentShelf: event.target.value,
+            updating: true
         });
     };
+
+    componentWillReceiveProps(){
+        // Remove the process indicator
+        this.setState({
+            updating: false
+        });
+    }
 
     render(){
         return(
             <div className="book-shelf-changer">
                 <select
-                    value={this.props.book.shelf}
+                    value={this.state.currentShelf}
                     onChange={this.changeShelf}
                 >
                     <option value="move" disabled>Move to...</option>
@@ -28,6 +41,7 @@ class ShelfChanger extends Component{
                     <option value="read">Read</option>
                     <option value="none">None</option>
                 </select>
+                { this.state.updating && (<div className="cssload-spin-box"></div>)}
             </div>
         )
     }

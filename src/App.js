@@ -37,7 +37,7 @@ class BooksApp extends React.Component {
     updateQuery = (query) => {
         if(query){
             BooksAPI.search(query, this.MAX_RESULTS).then((books) => {
-                // if the SearchAPI result was proper, this would be unnecessary
+                // if the BookAPI.search worked properly, this would be unnecessary
                 if(books.length){
                     books.forEach((book, index) => {
                         let myBook = this.state.books.find((b) => b.id === book.id);
