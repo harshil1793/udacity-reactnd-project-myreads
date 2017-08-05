@@ -29,8 +29,15 @@ class BooksApp extends React.Component {
     }
 
     changeShelf = (book, newShelf) => {
-        BooksAPI.update(book, newShelf).then((res) => {
-            this.fetchBooks();
+        BooksAPI.update(book, newShelf).then(() => {
+            // Update the local copy of the book
+            book.shelf = newShelf;
+
+            // Filter out the book and append it to the end of the list
+            // so it appears at the end of whatever shelf it was added to.
+            this.setState(state => ({
+                books: state.books.filter(b => b.id !== book.id).concat([ book ])
+            }));
         });
     };
 
